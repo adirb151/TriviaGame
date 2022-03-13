@@ -21,9 +21,15 @@ def is_finished():
         if event.type == py.QUIT:
             finished = True
         if manager.mode == 'home':
-            pass
+            if event.type == py.MOUSEBUTTONDOWN:
+                if manager.click_start(event.pos):
+                    manager.mode = 'play'
         elif manager.mode == 'play':
-            pass
+            if event.type == py.MOUSEBUTTONDOWN:
+                for i in range(4):
+                    if manager.clicked_ans_i(i, event.pos):
+                        manager.choose_ans(i)
+            manager.check_times_up()
         else:
             pass
     return finished
@@ -35,8 +41,14 @@ while not is_finished():
         manager.show_start_button()
     elif manager.mode == 'play':
         manager.show_background()
+        manager.show_question()
+        manager.show_answers()
+        manager.show_time()
+        manager.show_score()
     else:
         manager.show_background()
+        manager.show_end_message()
+        manager.show_score()
 
     py.display.flip()
     clock.tick(60)

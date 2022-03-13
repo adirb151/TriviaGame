@@ -1,13 +1,20 @@
 import pygame as py
 
+from classes.answer import Answer
+from classes.question import Question
 from constants import *
 
 
 class Reader:
 
     def __init__(self):
-        self.question = self.extract_question()
-        self.answers = self.extract_answers()
+        questions = self.extract_question()
+        answers = self.extract_answers()
+        self.questions = []
+        for i in range(len(questions)):
+            question = Question(questions[i], [Answer(answers[i][0], 0), Answer(answers[i][1], 1), Answer(answers[i][2], 2),
+                                 Answer(answers[i][3], 3)], int(answers[i][4]))
+            self.questions.append(question)
 
 
     def extract_question(self):
