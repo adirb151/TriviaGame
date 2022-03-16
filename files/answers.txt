@@ -1,5 +1,4 @@
-Orgad,Rom,Mark,Monika,0
-a bit,not at all,kind of,ALOT,3
-umm,-_-,indeed,NO!,2
--5,2,10,999,3
-yes,of course,why not lol,how long the stick is?,3
+Canada,Russia,China,USA,1
+20,10,2,15,0
+Blue,Black,White,Yellow,3
+no,yes,YEAH!!!!,it's ok,2
